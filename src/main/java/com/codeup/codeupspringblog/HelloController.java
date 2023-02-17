@@ -2,7 +2,9 @@ package com.codeup.codeupspringblog;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
+import org.springframework.ui.Model;
+import java.util.ArrayList;
+import java.util.List;
 record Message(String message){}
 
 
@@ -46,4 +48,34 @@ public class HelloController {
     public String booleanValue(@PathVariable boolean booleanVar) {
         return "the answer is :" + booleanVar;
     }
+
+
+    @GetMapping("/hello/{name}")
+    public String sayHello(@PathVariable String name, Model model) {
+        model.addAttribute("name", name);
+        return "hello";
+    }
+
+    @GetMapping("/join")
+    public String showJoinForm() {
+        return "join";
+    }
+
+    @PostMapping("/join")
+    public String joinCohort(@RequestParam(name = "cohort") String cohort, Model model) {
+        model.addAttribute("cohort", "Welcome to " + cohort + "!");
+        return "join";
+    }
+
+    @GetMapping("/dogpark")
+    public String dogpark(Model model) {
+        List<String> dogs = new ArrayList<>();
+        dogs.add("Bubbles");
+        dogs.add("Spot");
+        dogs.add("Ezekial");
+
+        model.addAttribute("dogs", dogs);
+        return "dogpark";
+    }
+
 }

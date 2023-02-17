@@ -13,3 +13,4 @@ public class HomeController{
         return "home";
     }
 }
+//the return "home" above where home refers to the html page name. otherwise html won't open.
