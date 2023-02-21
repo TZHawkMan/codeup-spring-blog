@@ -1,4 +1,4 @@
-package com.codeup.codeupspringblog;
+package com.codeupspringblog.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -77,5 +77,9 @@ public class HelloController {
         model.addAttribute("dogs", dogs);
         return "dogpark";
     }
+
+
+
+
 
 }
