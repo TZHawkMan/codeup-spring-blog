@@ -1,4 +1,4 @@
-package com.codeupspringblog.controllers;
+package com.codeupspringblog;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
