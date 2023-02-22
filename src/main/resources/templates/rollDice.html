@@ -5,6 +5,15 @@
     <title>Title</title>
 </head>
 <body>
-<a>1</a>
+<h2>Please choose a number below</h2>
+<a th:href="@{/roll-dice/1}">1</a>
+<a th:href="@{/roll-dice/2}">2</a>
+<a th:href="@{/roll-dice/3}">3</a>
+<a th:href="@{/roll-dice/4}">4</a>
+<a th:href="@{/roll-dice/5}">5</a>
+<a th:href="@{/roll-dice/6}">6</a>
+<p th:if = "${randomNum != null}" th:text = "${'Random Number: ' +randomNum}"></p>
+<p th:if = "${result != null && result}"> Right !</p>
+<p th:if = "${result != null && !result}"> Wrong !</p>
 </body>
 </html>
